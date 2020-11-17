@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import LocationData from './LocationData'
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export class LocationDashboard extends Component {
     state ={
         locations: []
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:5002/emp-count-by-location`)
+        axios.get(`${BASE_URL}/emp-count-by-location`)
           .then(res => {
             console.log(res);
             const locations = res.data;

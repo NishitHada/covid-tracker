@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import FormInput from './FormInput'
 import FileInput from './FileInput'
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export class Input extends Component {
     constructor(props) {
         super(props)

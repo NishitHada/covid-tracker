@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 var querystring = require('querystring');
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export class FormInput extends Component {
     constructor(props) {
         super(props)
@@ -47,13 +49,14 @@ export class FormInput extends Component {
     }
 
     handleSubmit = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         console.log(this.state)
-        axios.post('http://localhost:5002/upload-form', 
+        axios.post(`${BASE_URL}/upload-form`, 
         // JSON.stringify(this.state))
         querystring.stringify(this.state))
         .then(response => {
             console.log(response)
+            
         })
         .catch(error => {
             console.log(error)  

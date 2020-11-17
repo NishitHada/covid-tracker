@@ -3,6 +3,8 @@ import axios from 'axios'
 // import * as data from './LatLng.json'
 import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export class Map extends Component {
   constructor(props) {
     super(props)
@@ -14,7 +16,7 @@ export class Map extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:5002/emp-count-by-location`)
+    axios.get(`${BASE_URL}/emp-count-by-location`)
       .then(res => {
         console.log(res);
         const locations = res.data;
@@ -30,7 +32,8 @@ export class Map extends Component {
       "Bangalore":[12.971599, 77.594566],
       "Pune": [18.5204, 73.8567],
       "Mysore": [12.2958, 76.6394],
-      "Chennai": [13.0827, 80.2707]
+      "Chennai": [13.0827, 80.2707],
+      "Hyderabad": [17.3850, 78.4867]
     };
 
     // const cities = ["Bangalore", "Pune", "Mysore"];

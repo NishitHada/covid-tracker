@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import axios from 'axios'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export class ViewData extends Component {
     state ={
         persons: []
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:5002/all-data`)
+        axios.get(`${BASE_URL}/all-data`)
           .then(res => {
             console.log(res);
             const persons = res.data;

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios, { post } from 'axios';
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export class FileInput extends Component {
     constructor(props) {
         super(props);
@@ -24,7 +26,7 @@ export class FileInput extends Component {
     }
 
     fileUpload(file){
-        const url = 'http://localhost:5002/upload-file';
+        const url = `${BASE_URL}/upload-file`;
         const formData = new FormData();
         formData.append('file',file)
         const config = {
