@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Input from './Input'
-import Dashboard from './Dashboard'
+import Input from './components/Input'
+import Dashboard from './components/Dashboard'
 
 
 // // import Test from './Test'
 // import Radio from './Radio'
 // import DataReactTable from './DataReactTable'
-import Map from './Map'
+// import Map from './Map'
 
 
 export class App extends Component {
